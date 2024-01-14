@@ -1,0 +1,43 @@
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+}
+.winner {
+  background: red;
+  color: #fff !important;
+  border-color: #6f1010 !important;
+}
+.flex.justify-center.items-center.h-screen {
+  flex-direction: column;
+}
+.result_area {
+  position: absolute;
+  top: 0;
+  background: red;
+  width: 212px;
+  height: 212px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+}
+.hh {
+  position: relative;
+}
+
+.result_area h1 {
+  font-size: 35px;
+  color: #e6e1e1;
+  font-weight: bold;
+  text-align: center;
+  line-height: 45px;
+}
+
+.result_area h1 span {
+  font-size: 80px;
+  color: white;
+  font-weight: bold;
+}
+.result_area h1 span.drawMatch {
+  font-size: 60px;
+}
