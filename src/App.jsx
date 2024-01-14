@@ -3,12 +3,13 @@ import "./app.css";
 
 function App() {
   const [player, setPlayer] = useState(true);
+  const [winnerAlert, setWinnerAlert] = useState(false);
   const [squres, setSqures] = useState(Array(9).fill(null));
   const [winner, setWinner] = useState("");
   const [winnerRow, setWinnerRow] = useState([]);
 
   const buttonClick = (e, index) => {
-    if (squres[index] || winner) {
+    if (squres[index] || winnerAlert) {
       return;
     }
     setWinner("");
@@ -24,6 +25,7 @@ function App() {
     setSqures(Array(9).fill(null));
     setWinnerRow([]);
     setWinner("");
+    setWinnerAlert(false);
   };
 
   const checkWinner = (board, player) => {
@@ -41,6 +43,7 @@ function App() {
     for (const condition of winConditions) {
       const [a, b, c] = condition;
       if (board[a] && board[a] === board[b] && board[b] === board[c]) {
+        setWinnerAlert(true);
         setTimeout(() => {
           setWinner(player);
         }, 600);
